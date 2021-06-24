@@ -11,7 +11,7 @@ steps:
       - flake8
 
 steps:
-- name: fetch
+- name: submodules
   image: alpine/git
   commands:
-  - git fetch --tags
+  - git submodule update --init --recursive
