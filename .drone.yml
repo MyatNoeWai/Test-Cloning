@@ -10,8 +10,12 @@ steps:
       - python -m pip install -r requirements.txt
       - flake8
 
+clone:
+  disable: true
+
 steps:
-- name: submodules
+- name: clone
   image: alpine/git
   commands:
-  - git submodule update --init --recursive
+  - git clone https://github.com/octocat/hello-world.git .
+  - git checkout test
